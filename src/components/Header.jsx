@@ -1,4 +1,6 @@
-import profileImg from "../../public/profileImg.jpeg";
+import { NavLink } from "react-router-dom";
+import profileName from "../../public/Vector.svg";
+
 import { useState } from "react";
 import {
   Dialog,
@@ -13,7 +15,7 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white">
+    <header className="bg-[#27374D] sticky top-0 z-50 shadow-md">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -24,8 +26,8 @@ export const Header = () => {
             target="_blank"
             className="-m-1.5 p-1.5 flex items-center gap-5"
           >
-            <img className="w-[10%] rounded-full" src={profileImg} alt="" />
-            <span className="text-3xl">Oziel Sousa</span>
+            <img className="w-[60%]" src={profileName} alt="" />
+            
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -42,19 +44,28 @@ export const Header = () => {
           <Popover className="relative">
             <PopoverPanel
               transition
-              className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+              className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-[#DDE6ED]/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
             ></PopoverPanel>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <NavLink
+            to="/"
+            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#DDE6ED] hover:bg-gray-50"
+          >
             Início
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          </NavLink>
+          <NavLink
+            to="/projects"
+            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#DDE6ED] hover:bg-gray-50"
+          >
             Projetos
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#DDE6ED] hover:bg-gray-50"
+          >
             Contato
-          </a>
+          </NavLink>
         </PopoverGroup>
       </nav>
       <Dialog
@@ -63,11 +74,11 @@ export const Header = () => {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-[#DDE6ED]/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Oziel Sousa</span>
-              <img className="h-[15%] w-auto" src={profileImg} alt="" />
+              <img className="h-[15%] w-auto" src={profileName} alt="" />
             </a>
             <button
               type="button"
@@ -81,24 +92,24 @@ export const Header = () => {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                <NavLink
+                  to="/"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#DDE6ED] hover:bg-gray-50"
                 >
                   Início
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                </NavLink>
+                <NavLink
+                  to="/projects"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#DDE6ED] hover:bg-gray-50"
                 >
                   Projetos
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                </NavLink>
+                <NavLink
+                  to="/contact"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#DDE6ED] hover:bg-gray-50"
                 >
                   Contato
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>
