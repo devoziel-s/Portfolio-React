@@ -15,7 +15,7 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#27374D] sticky top-0 z-50 shadow-md">
+    <header className="bg-[#111827] shadow-lg sticky top-0 z-50 ">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
